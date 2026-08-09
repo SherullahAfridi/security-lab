@@ -1,0 +1,1 @@
+console.log("Security Lab application loaded.");

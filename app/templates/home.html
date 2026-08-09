@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block title %}
+Security Lab - Home
+{% endblock %}
+
+{% block content %}
+
+<div class="text-center py-5">
+
+    <h1 class="display-3 fw-bold">
+        Welcome to Security Lab
+    </h1>
+
+    <p class="lead mt-3">
+        A web application for learning and practicing web security.
+    </p>
+
+    <div class="mt-4">
+
+        <a
+            href="{{ url_for('posts.index') }}"
+            class="btn btn-primary btn-lg me-2"
+        >
+            Explore Posts
+        </a>
+
+        <a
+            href="{{ url_for('feedback.index') }}"
+            class="btn btn-outline-secondary btn-lg"
+        >
+            Leave Feedback
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="row g-4 mt-3">
+
+    <!-- Posts -->
+    <div class="col-md-4">
+
+        <a
+            href="{{ url_for('posts.index') }}"
+            class="text-decoration-none text-dark"
+        >
+
+            <div class="card h-100 shadow-sm">
+
+                <div class="card-body p-4">
+
+                    <h2 class="card-title">
+                        Posts
+                    </h2>
+
+                    <p class="card-text">
+                        Read articles and discussions from users.
+                    </p>
+
+                    <span class="btn btn-primary">
+                        View Posts
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!-- Comments -->
+    <div class="col-md-4">
+
+        <a
+            href="{{ url_for('posts.index') }}"
+            class="text-decoration-none text-dark"
+        >
+
+            <div class="card h-100 shadow-sm">
+
+                <div class="card-body p-4">
+
+                    <h2 class="card-title">
+                        Comments
+                    </h2>
+
+                    <p class="card-text">
+                        Participate in discussions and leave comments.
+                    </p>
+
+                    <span class="btn btn-primary">
+                        View Discussions
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!-- Feedback -->
+    <div class="col-md-4">
+
+        <a
+            href="{{ url_for('feedback.index') }}"
+            class="text-decoration-none text-dark"
+        >
+
+            <div class="card h-100 shadow-sm">
+
+                <div class="card-body p-4">
+
+                    <h2 class="card-title">
+                        Feedback
+                    </h2>
+
+                    <p class="card-text">
+                        Send feedback about the website.
+                    </p>
+
+                    <span class="btn btn-primary">
+                        Leave Feedback
+                    </span>
+
+                </div>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <article class="card mb-4">
+        <div class="card-body">
+
+            <h1>{{ post.title }}</h1>
+
+            <small class="text-muted">
+                {{ post.created_at }}
+            </small>
+
+            <hr>
+
+            <p style="white-space: pre-wrap;">{{ post.content }}</p>
+
+        </div>
+    </article>
+
+    <h2>Comments</h2>
+
+    {% if post.comments %}
+
+        {% for comment in post.comments %}
+
+        <div class="card mb-2">
+            <div class="card-body">
+                <p>{{ comment.content }}</p>
+
+                <small class="text-muted">
+                    {{ comment.created_at }}
+                </small>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No comments yet.</p>
+
+    {% endif %}
+
+    <hr>
+
+    <h3>Add Comment</h3>
+
+    <form method="POST"
+          action="{{ url_for('posts.comment', post_id=post.id) }}">
+
+        <div class="mb-3">
+            <textarea
+                name="content"
+                class="form-control"
+                rows="4"
+                placeholder="Write your comment..."
+                required
+            ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Comment
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}
